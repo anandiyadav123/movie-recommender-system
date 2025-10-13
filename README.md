@@ -1,42 +1,85 @@
-# Movie-recommender-system
-A content-based movie recommendation system that suggests movies to users based on similarity in features like genres, keywords, cast, and crew using the TMDB dataset.
+# 🎬 Movie Recommender System
 
-# Project Overview
-This project leverages movie metadata to build a recommendation engine that suggests similar movies based on user input. It uses feature engineering and machine learning techniques such as:
+A **content-based movie recommendation system** that suggests similar movies based on features like **genres, keywords, cast, and crew**, using the **TMDB 5000 Movie Dataset**.
 
-Data Cleaning and Preprocessing
-, Feature Extraction (Genres, Cast, Keywords, Director)
-, Vectorization using CountVectorizer / TF-IDF
-, Similarity calculation using Cosine Similarity
+---
 
-# Key Features
-Content-Based Filtering: Uses movie attributes rather than user behavior.
-Text Feature Engineering: Combines multiple metadata fields into a single tag for vectorization.
-Similarity Calculation: Uses Cosine Similarity on vectorized tags to find top matches.
-Clean, Modular Code: Easily extensible and readable codebase using pandas, scikit-learn, etc.
- 
-# Dataset Used
-TMDB 5000 Movie Dataset
-, Contains metadata of over 5,000 movies, including:
-, Titles
-, Genres
-, Overview and Taglines
-, Cast, Crew, and Keywords
+## 📘 Project Overview
 
-# Tech Stack
-Python
-, Pandas & NumPy – data preprocessing
-, Scikit-learn – vectorization and similarity analysis
-, CountVectorizer 
+This project builds a **content-based movie recommendation engine** using metadata from the TMDB dataset.  
+It recommends movies that are similar to a given title based on content similarity, not user ratings.  
 
-# How It Works
-Preprocesses movie metadata and combines key fields into a unified "tag".
-Vectorizes the text using CountVectorizer ,
-Computes cosine similarity between movies.
-Returns top 5 similar movies for any input title.
+It applies **feature engineering**, **text vectorization**, and **cosine similarity** to identify and recommend the most relevant movies.
 
+### 🧠 Core Concepts
+- **Data Cleaning & Preprocessing** – Handle missing or inconsistent metadata.  
+- **Feature Extraction** – Extract genres, cast, crew, and keywords.  
+- **Feature Engineering** – Combine these into a unified textual representation (“tag”).  
+- **Vectorization** – Convert tags into numerical vectors using `CountVectorizer` or `TF-IDF`.  
+- **Similarity Calculation** – Compute pairwise similarity using cosine similarity.  
 
+---
 
+## ✨ Key Features
 
+✅ **Content-Based Filtering** – Recommends movies using movie attributes rather than user data.  
+✅ **Text Feature Engineering** – Combines multiple metadata fields into a single “tag.”  
+✅ **Cosine Similarity** – Measures how close movies are in vector space.  
+✅ **Modular, Clean Codebase** – Easy to maintain and extend.  
 
+---
 
+## 🎬 Dataset
+
+**TMDB 5000 Movie Dataset**  
+
+Includes metadata for over 5,000 movies:
+- Movie Titles  
+- Genres  
+- Overview and Taglines  
+- Cast and Crew Information  
+- Keywords  
+
+📦 Dataset Source: [TMDB 5000 Movie Dataset (Kaggle)](https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata)
+
+---
+
+## 🧰 Tech Stack
+
+| Technology | Purpose |
+|-------------|----------|
+| **Python** | Core programming language |
+| **Pandas & NumPy** | Data preprocessing and manipulation |
+| **Scikit-learn** | Vectorization (`CountVectorizer`, `TF-IDF`) and cosine similarity |
+| **Jupyter / Streamlit (Optional)** | Visualization or Web UI (for future deployment) |
+
+---
+
+## ⚙️ How It Works
+
+1. **Preprocess** raw TMDB metadata (parse JSON-like columns, clean text).  
+2. **Create Tags** by combining genres, keywords, cast, and crew.  
+3. **Vectorize** tags using `CountVectorizer` or `TF-IDF`.  
+4. **Compute Cosine Similarity** between all movie vectors.  
+5. **Recommend** top 5 most similar movies for a given input movie title.  
+
+---
+
+## 🚀 Example Output
+
+**Input:** `Avatar`  
+**Recommended Movies:**
+1. Guardians of the Galaxy  
+2. Star Trek Into Darkness  
+3. The Fifth Element  
+4. Star Wars: The Force Awakens  
+5. Jupiter Ascending  
+
+---
+
+## 🖥️ Installation and Usage
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/<your-username>/Movie-Recommender-System.git
+   cd Movie-Recommender-System
